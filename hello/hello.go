@@ -13,8 +13,8 @@ func main() {
 	log.SetPrefix("greetings: ")
 	log.SetFlags(0)
 
-	// Get a greeting message
-	message, err := greetings.Hello("Gladys")
+	names := []string{"Gladys", "Samantha", "Darrin"}
+	message, err := greetings.Hellos(names)
 
 	// If an error was returned, print it to the console and
 	// exit the program.
