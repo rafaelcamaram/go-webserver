@@ -1,8 +1,8 @@
 package greetings
 
 import (
-	"fmt"
 	"errors"
+	"fmt"
 	"math/rand"
 	"time"
 )
@@ -19,7 +19,7 @@ func Hello(name string) (string, error) {
 	}
 
 	message := fmt.Sprintf(randomFormat(), name)
-	return message, nil;
+	return message, nil
 }
 
 // randomFormat returns one of a set of greeting messages. The returned
@@ -32,4 +32,21 @@ func randomFormat() string {
 	}
 
 	return formats[rand.Intn(len(formats))]
+}
+
+// Hellos returns a map that associates each of the named people
+// with a greeting message.
+func Hellos(names []string) (map[string]string, error) {
+	messages := make(map[string]string)
+	for _, name := range names {
+		message, err := Hello(name)
+
+		if err != nil {
+			return nil, err
+		}
+
+		messages[name] = message
+	}
+
+	return messages, nil
 }
