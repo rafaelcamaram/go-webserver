@@ -11,24 +11,15 @@ const (
 )
 
 func main() {
-	// increment := 1
+	slice := []int{1, 2, 3}
+	fmt.Println(slice)
 
-	// fmt.Println("Hello from a module, Gophers!")
-	// fmt.Println(first+increment, second+increment, third+increment)
+	slice = append(slice, 4, 42, 27)
+	fmt.Println(slice)
 
-	// increment = 2
+	s2 := slice[1:]
+	s3 := slice[:2]
+	s4 := slice[1:2]
 
-	// fmt.Println(first+increment, second+increment, third+increment)
-
-	// Array
-	var arr [3]int
-	arr[0] = 1
-	arr[1] = 2
-	arr[2] = 3
-	fmt.Println(arr)
-	fmt.Println(arr[1])
-
-	arr2 := [3]int{1, 2, 3}
-	fmt.Println(arr2)
-	fmt.Println(arr2[1])
+	fmt.Println(s2, s3, s4)
 }
